@@ -1,16 +1,15 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+  "modules-left": ["clock", "hyprland/workspaces", "wlr/taskbar"],
 
-  "modules-center": ["custom/music"],
+  "modules-center": ["custom/media"],
   "modules-right": [
+    "idle_inhibitor",	  
     "pulseaudio",
     "backlight",
     "battery",
-    "clock",
-    "network",
-    "idle_inhibitor"
+    "network" 
   ],
   "wlr/workspaces": {
     "disable-scroll": true,
@@ -41,17 +40,17 @@
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "󰖩",
+    "format-wifi": "󰤥   {essid}",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "󰖪 ",
+    "format-disconnected": "󰤭 ",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+    "max-length": 20
   },
 
-  "custom/music": {
+  "custom/media": {
     "format": "󰎇  {}",
     "escape": true,
     "interval": 5,
@@ -63,20 +62,21 @@
   "clock": {
     "format": "  {:%H:%M}",
     "timezone": "Asia/Kolkata",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip": false,
     "format-alt": "   {:%Y-%m-%d}"
   },
 
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon}  {percent}% ",
+    "tooltip": false,
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "idle_inhibitor": {
-    "format": "{icon}",
+    "format": "{icon}   Caffeine ",
     "format-icons": {
       "activated": "󰅶",
-      "deactivated": "󰛊"
+      "deactivated": "󰾫"
     }
   },
   "battery": {
@@ -100,11 +100,11 @@
     "format-source": "",
     "format-source-muted": " ",
     "tooltip": true,
-    "tooltip-format": "{icon} {volume} {format_source}",
+    "tooltip-format": "{format_source}",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "headphone": "󰋋",
+      "hands-free": "󰓃",
+      "headset": "󰋋",
       "phone": "",
       "portable": "",
       "car": "",

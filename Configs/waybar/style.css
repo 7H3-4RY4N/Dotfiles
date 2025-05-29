@@ -1,48 +1,56 @@
-@import "mocha.css";
+@import "colors.css";
 
 * {
   font-family: FantasqueSansMono Nerd Font;
   font-size: 17px;
   min-height: 0;
+  border-radius: 50px;
 }
 
 #waybar {
   background: transparent;
-  color: @text;
-  margin: 5px 5px;
 }
 
 #workspaces {
-  border-radius: 2rem;
-  margin: 5px;
-  background-color: @surface0;
-  margin-left: 1rem;
-  padding: 0px 10px 0px;
+  margin: 5px 12px 5px 12px ;
+  background-color: @surface_container_low;
+  padding: 2px;
 }
 
 #workspaces button {
-  color: @lavender;
-  border-radius: 50%;
+  background-color: transparent;
+  color: @outline;
   padding: 0.4rem;
-  min-width: 20px;
-  min-height: 20px;
   margin: 3px 2px;
-  font-size: 12px;
+  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
 }
 
 #workspaces button.active {
-  color: @red;
-  border-radius: 1rem;
-  animation: ws_active 20s ease-in-out 1;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+  padding: 5px 24px;
+  background-color:@primary_fixed_dim;
+  color: @on_primary_fixed
+}
+
+#workspaces button.active:hover {
+  color: @primary_fixed_dim;
+  background: inherit;
+}
+
+#workspaces button.empty {
+  color: @outline_variant;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1rem;
+  background-color: @surface_container_high;	
 }
 
-#custom-music,
+#workspaces button.urgent {
+  background-color: @error;
+  color: @on_error;
+}
+
+#custom-media,
 #backlight,
 #clock,
 #battery,
@@ -50,54 +58,33 @@
 #network,
 #idle_inhibitor,
 #taskbar {
-  background-color: @surface0;
+  color: @primary;
+  background-color: @surface_container;
   padding: 0.5rem 1rem;
   margin: 5px 0;
 }
 
 #clock {
-  color: @blue;
-  border-radius: 0px 2rem 2rem 0px;
-  margin-right: 1rem;
+ margin-left: 12px;
 }
 
-#battery,
-#battery.charging {
-  color: @green;
-}
-
-#battery.warning:not(.charging) {
-  color: @red;
-}
-
-#backlight {
-  color: @yellow;
-}
-
-#backlight,
-#battery {
-  border-radius: 0;
-}
 
 #pulseaudio {
-  color: @maroon;
-  border-radius: 2rem 0px 0px 2rem;
-  margin-left: 1rem;
+  margin-left: 12px;
+  margin-right: 12px;
 }
-
-#custom-music {
-  color: @mauve;
-  border-radius: 2rem;
+#battery { 
+  margin-right: 12px;
+}
+#backlight {
+  margin-right: 12px;
 }
 
 #network {
-  color: @maroon;
-  border-radius: 2rem 0px 0px 2rem;
+  margin-right: 12px;
 }
 
 #taskbar {
-  border-radius: 2rem;
-  margin-left: 1rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -108,12 +95,8 @@
   transition: all 0.3s ease-in-out;
 }
 #taskbar button:hover {
-  color: @sapphire;
-  border-radius: 2rem;
+  border-radius: 50px;
 }
 #idle_inhibitor {
-  color: @mauve;
-  border-radius: 0px 2rem 2rem 0px;
-  margin-right: 1rem;
-  padding-right: 1.5rem;
+  margin-left: 12px;
 }

@@ -8,6 +8,8 @@ _Personal configuration of dotfiles for Arch Linux (Hyprland targeted)_
 
 </div>
 
+## 📸 Screenshots
+
 <p align="center">
 <img src="./Screenshots/Screenshot01.png" width="700"/>
 <img src="./Screenshots/Screenshot02.png" width="700"/>

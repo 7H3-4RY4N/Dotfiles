@@ -56,6 +56,7 @@
 #battery,
 #pulseaudio,
 #network,
+#custom-swaync,
 #idle_inhibitor,
 #taskbar {
   color: @primary;
@@ -68,6 +69,9 @@
  margin-left: 12px;
 }
 
+#custom-swaync{
+  margin-right: 12px;
+}
 
 #pulseaudio {
   margin-left: 12px;
@@ -100,3 +104,4 @@
 #idle_inhibitor {
   margin-left: 12px;
 }
+

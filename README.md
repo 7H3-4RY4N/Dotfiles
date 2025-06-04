@@ -12,6 +12,7 @@ _Personal configuration of dotfiles for Arch Linux (Hyprland targeted)_
 
 <p align="center">
 <img src="./Screenshots/Screenshot01.png" width="800"/>
+<img src="./Screenshots/Screenshot04.png" width="800"/>
 <img src="./Screenshots/Screenshot02.png" width="800"/>
 <img src="./Screenshots/Screenshot03.png" width="800"/>
 </p>

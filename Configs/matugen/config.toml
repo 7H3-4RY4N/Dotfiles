@@ -49,3 +49,7 @@ output_path = '~/.config/rofi/colors.rasi'
 input_path = '~/.config/matugen/templates/matugen-swaync.css'
 output_path = '~/.config/swaync/matugen/matugen-swaync.css'
 post_hook = 'swaync-client -rs'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/matugen-cava'
+output_path = '~/.config/cava/config'

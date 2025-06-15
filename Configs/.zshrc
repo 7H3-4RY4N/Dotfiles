@@ -42,7 +42,9 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
-
+alias ff="fastfetch"
+alias nv="nvim"
+alias vi="nvim"
 
 # Shell integrations
 eval "$(fzf --zsh)"

@@ -1,10 +1,3 @@
-/***
- *    ┏┓┏┓┳┓┏┳┓┳┓┏┓┓   ┏┓┏┓┳┓┏┳┓┏┓┳┓
- *    ┃ ┃┃┃┃ ┃ ┣┫┃┃┃ ━━┃ ┣ ┃┃ ┃ ┣ ┣┫
- *    ┗┛┗┛┛┗ ┻ ┛┗┗┛┗┛  ┗┛┗┛┛┗ ┻ ┗┛┛┗
- *                                  
- */
-
 
 @define-color text                  @on_surface;
 @define-color background-alt  	    @surface_container_highest;

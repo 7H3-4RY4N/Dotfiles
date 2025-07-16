@@ -47,6 +47,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias oldvim="/usr/bin/vim"
 alias '..'="cd .."
+alias search="pacman -Ss"
+alias aur="paru -Ss"
+alias yay="paru"
 
 # Shell integrations
 eval "$(fzf --zsh)"

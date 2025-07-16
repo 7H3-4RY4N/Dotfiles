@@ -1,8 +1,9 @@
 @import "colors.css";
 
 * {
-  font-family: FantasqueSansMono Nerd Font;
-  font-size: 17px;
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-weight: bold;
+  font-size: 14px;
   min-height: 0;
   border-radius: 50px;
 }
@@ -28,8 +29,8 @@
 
 #workspaces button.active {
   padding: 5px 24px;
-  background-color:@primary_fixed_dim;
-  color: @on_primary_fixed
+  background-color:@on_primary_fixed_variant;
+  color: @primary_fixed_dim;
 }
 
 #workspaces button.active:hover {
@@ -51,6 +52,7 @@
 }
 
 #custom-media,
+#custom-music,
 #backlight,
 #clock,
 #battery,
@@ -65,8 +67,12 @@
   margin: 5px 0;
 }
 
+
 #clock {
  margin-left: 12px;
+ border:2px solid @background;
+ background-color: @primary_fixed_dim;
+ color:@surface_container;
 }
 
 #custom-swaync{
@@ -76,20 +82,37 @@
 #pulseaudio {
   margin-left: 12px;
   margin-right: 12px;
+  color: @tertiary_fixed;
+  background-color: @on_primary_fixed_variant;
+ border:2px solid @background;
 }
 #battery { 
   margin-right: 12px;
+  color: #0dbd13;
 }
+#battery.medium {
+  color: orange;
+}
+#battery.warning {
+  color: @on_error;
+}
+
 #backlight {
+  color:#b631eb;
   margin-right: 12px;
 }
 
 #network {
   margin-right: 12px;
+  background-color: @primary_container;
+  color: @primary_fixed;
+ border:2px solid @background;
 }
 
 #taskbar {
   transition: all 0.3s ease-in-out;
+  margin-left: 12px;
+  background-color:@surface_container;
 }
 
 #taskbar.empty {
@@ -103,5 +126,23 @@
 }
 #idle_inhibitor {
   margin-left: 12px;
+  color:@primary;
+}
+#custom-music.Playing {
+    background-size: 400% 400%;
+    animation: gradient_f 9s cubic-bezier(.72, .39, .21, 1) infinite;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+    font-weight: bold;
+    color: @primary_fixed_dim;
 }
 
+#custom-music{
+  background: @surface_container;
+  margin-left: 12px;
+  border: 2px solid @background;
+}
+
+#custom-music.Paused,
+#custom-music.Stopped {
+    background: @surface_container;
+}

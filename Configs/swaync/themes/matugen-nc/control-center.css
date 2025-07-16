@@ -1,4 +1,3 @@
-
 @define-color text                  @on_surface;
 @define-color background-alt  	    @surface_container_highest;
 @define-color background-alt-alpha  alpha(@surface_bright, .55);
@@ -27,7 +26,7 @@
 /* CONTROL CENTER ------------------------------------------------------------------------ */
 
 .control-center {
-  background: @background;
+  background: alpha(@background, .55);
   border-radius: 14px;
   border: 2px solid @selected;
   box-shadow: 0 0 10px 0 rgba(0,0,0,.6);

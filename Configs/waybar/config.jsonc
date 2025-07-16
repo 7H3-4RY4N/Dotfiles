@@ -1,25 +1,30 @@
 {
   "layer": "top",
   "position": "top",
-  "modules-left": ["clock", "hyprland/workspaces", "wlr/taskbar"],
+  "modules-left": ["clock", "custom/music" ,"wlr/taskbar"],
 
-  "modules-center": ["custom/media"],
+  "modules-center": ["idle_inhibitor" ,"hyprland/workspaces","custom/swaync"],
   "modules-right": [
-    "idle_inhibitor",	  
     "pulseaudio",
     "backlight",
     "battery",
-    "custom/swaync",
     "network" 
   ],
-  "wlr/workspaces": {
-    "disable-scroll": true,
-    "sort-by-name": true,
-    "format": " {icon} ",
-    "format-icons": {
-      "default": ""
-    }
-  },
+ "hyprland/workspaces": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons": {
+            "1": "󰊠", "2": "󰊠", "3": "󰊠", "4": "󰊠", "5": "󰊠",
+            "6": "󰊠", "7": "󰊠", "8": "󰊠", "9": "󰊠", "10": "󰊠",
+            "urgent": "󰊠",
+            "active": "󰮯",
+            "default": "󰊠"
+        },
+        "persistent_workspaces": {
+            "outputs": ["*"],
+            "workspaces": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
+    },
 
   "wlr/taskbar": {
     "format": "{icon}",
@@ -38,10 +43,22 @@
     }
   },
 
+"custom/music": {
+    "format": "{icon}{text}",
+    "escape": true,
+    "tooltip": false,
+    "exec": "/home/aryan/.config/waybar/scripts/caway",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "max-length": 35
+},
+
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "󰤥   {essid}",
+    "format-wifi": "󰤥 {essid}",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "format-disconnected": "󰤭 ",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -52,7 +69,7 @@
   },
 
   "custom/media": {
-    "format": "󰎇  {}",
+    "format": " {}",
     "escape": true,
     "interval": 5,
     "tooltip": false,
@@ -64,7 +81,7 @@
 "custom/swaync": {
 		"tooltip": true,
 		"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
-		"format": "{} {icon} ",
+		"format": " {} {icon} ",
 		"format-icons": {
 			"notification": "<span foreground='red'><sup></sup></span>",
 			"none": "",
@@ -84,20 +101,20 @@
 	},
 
   "clock": {
-    "format": "  {:%H:%M}",
+    "format": " {:%H:%M}",
     "timezone": "Asia/Kolkata",
     "tooltip": false,
-    "format-alt": "   {:%Y-%m-%d}"
+    "format-alt": " {:%a,%b-%d}"
   },
 
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon}  {percent}% ",
+    "format": "{icon} {percent}% ",
     "tooltip": false,
     "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "idle_inhibitor": {
-    "format": "{icon}   Caffeine ",
+    "format": " {icon} ",
     "format-icons": {
       "activated": "󰅶",
       "deactivated": "󰾫"
@@ -105,22 +122,22 @@
   },
   "battery": {
     "states": {
-      "warning": 30,
-      "critical": 15
+      "medium": 50,
+      "warning": 30
     },
-    "format": "{icon}  {capacity}%",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": "󱐋 {capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{icon}  {volume}% ",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format": "{icon} {volume}% ",
+    "format-bluetooth": "{volume}%",
+    "format-bluetooth-muted": " {icon}  {format_source}",
+    "format-muted": "",
     "format-source": "",
     "format-source-muted": " ",
     "tooltip": true,

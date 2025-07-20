@@ -6,8 +6,8 @@ configuration {
     terminal:            "kitty";
     fixed-num-lines:     true;
 
-    display-drun:        "";
-    drun-prompt:         "";
+    display-drun:        "";
+    drun-prompt:         "";
 
     drun { 
         lines: 12;

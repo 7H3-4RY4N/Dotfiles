@@ -3,11 +3,11 @@ local function enable_transparency()
 end
 return {
   {
-    "folke/tokyonight.nvim",
+    "rose-pine/neovim",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd([[colorscheme rose-pine]])
       enable_transparency()
     end,
   },

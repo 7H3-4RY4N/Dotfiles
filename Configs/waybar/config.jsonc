@@ -14,11 +14,11 @@
         "format": "{icon}",
         "tooltip": true,
         "format-icons": {
-            "1": "󰊠", "2": "󰊠", "3": "󰊠", "4": "󰊠", "5": "󰊠",
-            "6": "󰊠", "7": "󰊠", "8": "󰊠", "9": "󰊠", "10": "󰊠",
-            "urgent": "󰊠",
-            "active": "󰮯",
-            "default": "󰊠"
+            "1": "", "2": "", "3": "", "4": "", "5": "",
+            "6": "", "7": "", "8": "", "9": "", "10": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
         },
         "persistent_workspaces": {
             "outputs": ["*"],
@@ -60,7 +60,7 @@
     "format": "{ifname}",
     "format-wifi": "󰤥 {essid}",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "format-disconnected": "󰤭 ",
+    "format-disconnected": " 󰤭 ",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname} ",
@@ -81,7 +81,7 @@
 "custom/swaync": {
 		"tooltip": true,
 		"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
-		"format": " {} {icon} ",
+		"format": "{} {icon}",
 		"format-icons": {
 			"notification": "<span foreground='red'><sup></sup></span>",
 			"none": "",
@@ -104,7 +104,7 @@
     "format": " {:%H:%M}",
     "timezone": "Asia/Kolkata",
     "tooltip": false,
-    "format-alt": " {:%a,%b-%d}"
+    "format-alt": " {:%a, %b-%d}"
   },
 
   "backlight": {
@@ -135,7 +135,7 @@
   "pulseaudio": {
     "scroll-step": 1,
     "format": "{icon} {volume}% ",
-    "format-bluetooth": "{volume}%",
+    "format-bluetooth": " {volume}%",
     "format-bluetooth-muted": " {icon}  {format_source}",
     "format-muted": "",
     "format-source": "",

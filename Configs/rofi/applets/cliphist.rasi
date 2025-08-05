@@ -1,0 +1,113 @@
+/* Configuration ---------------------------------------------------- */
+configuration {
+  modi: "drun";
+  show-icons: false;
+  drun-display-format: "{name}";
+  display-format: "{text}";
+}
+
+/* Config and colors ----------------------------------------------- */
+@import "~/.config/rofi/colors.rasi"
+
+
+/* Main Window ------------------------------------------------ */
+window {
+  background-color: @surface-container;
+  border: 2px solid;
+  border-color: @primary;
+  border-radius: 12px;
+  width: 470px;
+  height: 425px;
+  location: center;
+  anchor: center;
+  padding: 15px;
+}
+
+/* Main Box --------------------------------------------------- */
+mainbox {
+  children: [ inputbar, listview ];
+  spacing: 15px;
+}
+
+/* Inputbar --------------------------------------------------- */
+inputbar {
+  background-color: @surface-container;
+  border: 2px solid;
+  border-color: @primary;
+  border-radius: 8px;
+  padding: 10px 15px;
+  spacing: 10px;
+  children: [ entry ];
+  text-color: @primary;
+  font: "Hack Nerd Font Bold 11";
+}
+
+/* Entry input ------------------------------------------------ */
+entry {
+  enabled: true;
+  placeholder: "Search";
+  placeholder-color: @primary;
+  text-color: inherit;
+  font: "JetBrains Mono Bold 11";
+}
+
+/* Listview --------------------------------------------------- */
+listview {
+  background-color: transparent;
+  margin: 0px;
+  columns: 1;
+  lines: 8;
+  fixed-height: true;
+  spacing: 8px;
+  scrollbar: false;
+  text-color: @primary;
+}
+
+/* Elements --------------------------------------------------- */
+element {
+  padding: 10px 15px;
+  spacing: 10px;
+  border-radius: 8px;
+  horizontal-align: 0;
+  text-color: @primary;
+  background-color: transparent;
+}
+
+element-icon {
+  size: 1.4em;
+  vertical-align: 0.5;
+}
+
+element-text {
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0;
+  font: inherit;
+}
+
+element normal.normal , element alternate.normal {
+  background-color:            inherit;
+  text-color:                  @primary;
+}
+element normal.active {
+  background-color:            @surface-container-high;
+  text-color:                  @primary;
+}
+element selected.normal {
+  background-color:            @surface-container-high;
+  text-color:                  @primary;
+}
+element selected.active {
+  background-color:            @surface-container-high;
+  text-color:                  @tertiary;
+}
+
+/* Dummy and other elements (set to transparent or hidden) ----- */
+dummy, textbox-help, textbox-icon, scrollbar, message, error-message {
+  enabled: false;
+  background-color: transparent;
+  text-color: transparent;
+  padding: 0;
+  margin: 0;
+  spacing: 0;
+}

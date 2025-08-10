@@ -15,4 +15,4 @@ configuration {
     }
 }
 
-@theme "~/.config/rofi/theme.rasi"
+@theme "~/.config/rofi/applets/appLauncher.rasi"

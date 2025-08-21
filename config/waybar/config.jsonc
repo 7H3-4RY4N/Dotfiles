@@ -43,7 +43,7 @@
     "format": "{icon}{text}",
     "escape": true,
     "tooltip": false,
-    "exec": "/home/aryan/.config/waybar/scripts/caway",
+    "exec": "/home/$USER/.config/waybar/scripts/caway",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl previous",

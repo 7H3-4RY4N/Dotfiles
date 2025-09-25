@@ -82,6 +82,13 @@
       "keyColor": "magenta"
     },
     {
+      "folders": "/",
+      "format": "{days} days",
+      "key": "  OS Age",
+      "keyColor": "magenta",
+      "type": "disk"
+    },
+    {
       "type": "datetime",
       "key": "  Date",
       "keyColor": "magenta",

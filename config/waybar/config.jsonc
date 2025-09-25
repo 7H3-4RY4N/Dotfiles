@@ -10,6 +10,7 @@
     "battery",
     "network" 
   ],
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
@@ -43,7 +44,7 @@
     "format": "{icon}{text}",
     "escape": true,
     "tooltip": false,
-    "exec": "/home/$USER/.config/waybar/scripts/caway",
+    "exec": "/home/aryan/.config/waybar/scripts/caway",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl previous",
@@ -52,10 +53,10 @@
   },
 
   "network": {
-    "interface": "wlan0",
+    "interface": ["wlan0", "enp117s0f4u1"],
     "format": "{ifname}",
     "format-wifi": "󰤥 {essid}",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-ethernet": "󰦉  Connected",
     "format-disconnected": " 󰤭 ",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
@@ -116,6 +117,7 @@
       "deactivated": "󰾫"
     }
   },
+
   "battery": {
     "states": {
       "medium": 50,

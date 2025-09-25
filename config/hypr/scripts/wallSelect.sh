@@ -107,19 +107,24 @@ swww query || swww-daemon --format xrgb
 #-------------------------------------------------------------------
 
 # Set wallpaper
-[[ -n "$wall_selection" ]] && swww img -o "$focused_monitor" "${wall_dir}/${wall_selection}" $SWWW_PARAMS;
-
-# Run matugen script
 if [[ -n "$wall_selection" ]]; then
+  swww img -o "$focused_monitor" "${wall_dir}/${wall_selection}" $SWWW_PARAMS
+
+  # Wait a bit for swww transition to finish before generating colors
+
+  # Run matugen and wait until it fully finishes
   "$scriptsDir/matugenMagick.sh" --dark
+
+  # Force reload apps that use matugen colors
+  pkill waybar
+  waybar &
+
+  pkill swaync
+  swaync &
+
+  # Clear rofi cache to reload theme
+  rm -f ~/.cache/rofi3.druncache
 fi
 
-
-# Restart applications to apply new colors
-pkill waybar
-sleep 0.5
-waybar &
-pkill swaync
-swaync &
-
 exit 0
+

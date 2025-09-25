@@ -6,6 +6,8 @@
   font-size: 14px;
   min-height: 0;
   border-radius: 50px;
+  margin: 0;
+  padding: 0;
 }
 
 #waybar {
@@ -13,7 +15,7 @@
 }
 
 #workspaces {
-  margin: 5px 12px 5px 12px ;
+  margin: 2px 12px ;
   background-color: @surface_container_low;
   padding: 2px;
 }
@@ -64,12 +66,12 @@
   color: @primary;
   background-color: @surface_container;
   padding: 0.5rem 1rem;
-  margin: 5px 0;
+  margin: 2px 0;
 }
 
 
 #clock {
- margin-left: 12px;
+ margin-left: 5px;
  border:2px solid @background;
  background-color: @primary_fixed_dim;
  color:@surface_container;
@@ -95,6 +97,7 @@
 }
 #battery.warning {
   color: @on_error;
+  background-color:#FFFFFF;
 }
 
 #backlight {
@@ -103,7 +106,7 @@
 }
 
 #network {
-  margin-right: 12px;
+  margin-right: 5px;
   background-color: @primary_container;
   color: @primary_fixed;
  border:2px solid @background;

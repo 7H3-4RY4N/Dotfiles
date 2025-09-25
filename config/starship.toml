@@ -15,9 +15,7 @@ $java\
 $jobs\
 $cmd_duration\
 $line_break\
-[](fg:#212736 bg:#1d2230)\
 $time\
-[ ](fg:#1d2230)\
 \n$character"""
 
 palette = 'nord'
@@ -84,4 +82,4 @@ purple = '#B48EAD'
 gray = '#434C5E'
 black = '#2E3440'
 white='#D8DEE9'
-main = '#a2d399'
+main = '#c4c0ff'

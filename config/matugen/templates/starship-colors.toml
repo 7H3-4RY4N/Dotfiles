@@ -15,9 +15,7 @@ $java\
 $jobs\
 $cmd_duration\
 $line_break\
-[](fg:#212736 bg:#1d2230)\
 $time\
-[ ](fg:#1d2230)\
 \n$character"""
 
 palette = 'nord'

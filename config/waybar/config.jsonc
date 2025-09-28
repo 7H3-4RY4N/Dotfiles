@@ -24,7 +24,7 @@
   },
 
   "wlr/taskbar": {
-    "format": "{icon}",
+    "format": " {icon} ",
     "icon-size": 16,
     "icon-theme": "Numix-Circle",
     "tooltip-format": "{title}",

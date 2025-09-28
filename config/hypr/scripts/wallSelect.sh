@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-
-
-# Set dir varialable
+# Set directories varialable
 wall_dir="$HOME/Pictures/Wallpapers"
 cacheDir="$HOME/.cache/wallcache"
 scriptsDir="$HOME/.config/hypr/scripts"
 
 # Create cache dir if not exists
 [ -d "$cacheDir" ] || mkdir -p "$cacheDir"
-
 
 # Get focused monitor
 focused_monitor=$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')
@@ -46,7 +43,9 @@ process_image() {
             magick "$imagen" -resize 500x500^ -gravity center -extent 500x500 "$cache_file"
             echo "$current_md5" > "$md5_file"
         fi
+        
         # Clean the lock file after processing
+
         rm -f "$lock_file"
     ) 200>"$lock_file"
 }
@@ -97,30 +96,27 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
 # SWWW Config
 FPS=144
 TYPE="any"
-DURATION=2
+DURATION=1
 BEZIER=".43,1.19,1,.4"
 SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # initiate swww if not running
 swww query || swww-daemon --format xrgb
 
-#-------------------------------------------------------------------
-
 # Set wallpaper
 if [[ -n "$wall_selection" ]]; then
   swww img -o "$focused_monitor" "${wall_dir}/${wall_selection}" $SWWW_PARAMS
-
-  # Wait a bit for swww transition to finish before generating colors
+  sleep $(echo "$DURATION + 0.1" | bc)
 
   # Run matugen and wait until it fully finishes
   "$scriptsDir/matugenMagick.sh" --dark
 
   # Force reload apps that use matugen colors
-  pkill waybar
-  waybar &
+  pkill waybar && hyprctl dispatch exec waybar & 
 
-  pkill swaync
-  swaync &
+  if pidof swaync > /dev/null; then
+      swaync-client -r
+  fi
 
   # Clear rofi cache to reload theme
   rm -f ~/.cache/rofi3.druncache

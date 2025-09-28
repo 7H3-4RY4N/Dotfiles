@@ -3,7 +3,7 @@
 * {
   font-family: JetBrainsMono Nerd Font Propo;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   min-height: 0;
   border-radius: 50px;
   margin: 0;
@@ -12,7 +12,9 @@
 
 #waybar {
   background: transparent;
+  min-height: 15px;
 }
+
 
 #workspaces {
   margin: 2px 12px ;

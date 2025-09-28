@@ -60,8 +60,3 @@ post_hook = 'swaync-client -rs'
 input_path = '~/.config/matugen/templates/matugen-cava'
 output_path = '~/.config/cava/config'
 
-#Starship
-
-[templates.starship]
-input_path = '~/.config/matugen/templates/starship-colors.toml'
-output_path = '~/.config/starship.toml'

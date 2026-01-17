@@ -1,0 +1,71 @@
+@import "./rose-pine.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+#waybar {
+  background-color:@base;
+  color: @text;
+  min-height: 26px;
+}
+
+#custom-music,
+#workspaces,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#idle_inhibitor {
+  padding: 0 15px;
+  margin: 0;
+}
+
+
+#workspaces button {
+  color: #565f89;
+  padding: 0 5px;
+}
+
+#workspaces button.active {
+  color: @foam;
+  background-color: @pine;
+}
+
+#pulseaudio {
+  color: @iris;
+}
+
+#battery {
+  color: @foam;
+}
+
+#battery.warning {
+  color: @gold; /* Orange */
+}
+
+#battery.critical {
+  color: @love; /* Red */
+}
+
+#backlight {
+  color: @gold;
+}
+
+#network {
+  color: @subtle;
+}
+
+#idle_inhibitor {
+  color: @love;
+}
+
+#custom-music {
+  color: @rose;
+}

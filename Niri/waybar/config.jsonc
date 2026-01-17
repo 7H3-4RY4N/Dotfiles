@@ -1,0 +1,81 @@
+{
+  "height":26,
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "margin-top":0,
+  "marrin-bottom":0,
+  "spacing":0,
+
+  "modules-left": [ "custom/music" ,"niri/workspaces"],
+
+  "modules-center": ["idle_inhibitor", "clock"],
+
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "network" 
+  ],
+
+  "custom/music": {
+    "format": "{icon}{text}",
+    "escape": true,
+    "tooltip": false,
+    "exec": "/home/aryan/.config/waybar/scripts/caway",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "max-length": 35
+  },
+
+  "network": {
+    "format-wifi": "wifi: {essid}",
+    "format-ethernet": "eth: {ifname}",
+    "format-disconnected": "net: off",
+    "tooltip-format": "{ipaddr}",
+    "max-length": 20
+},
+
+  "clock": {
+    "format": "{:%I : %M %p}",
+    "timezone": "Asia/Kolkata",
+    "tooltip": false,
+    "format-alt": "{:%A, %b-%d}"
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "led: {percent}%",
+    "tooltip": false,
+  },
+
+  "idle_inhibitor": {
+    "format": " {icon} ",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾫"
+    }
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "bat: {capacity}%",
+    "format-charging": "chg: {capacity}%",
+  },
+
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "vol: {volume}%     {format_source}",
+    "format-bluetooth": "bt-vol: {volume}% {format_source}",
+    "format-muted": "vol: off {format_source}",
+    "format-source": "mic: ON",
+    "format-source-muted": "mic: OFF",
+    "tooltip": false,
+    "on-click": "pavucontrol"
+  },
+}

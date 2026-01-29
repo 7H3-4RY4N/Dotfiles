@@ -25,10 +25,14 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: kitty" { spawn-sh "kitty"; }
-    ALT+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
+ // ALT+SPACE                           hotkey-overlay-title="Open App Launcher: fuzzel" { spawn-sh "fuzzel"; }
     MOD+B                               hotkey-overlay-title="Open Browser: zen" { spawn-sh "zen-browser"; }
-    MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
+ // MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+E                               hotkey-overlay-title="File Manager: Thunar" { spawn-sh "thunar"; }
+    Mod+ALT+L                           { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    ALT+SPACE                           { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+I                               { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+
 
     // ─── Audio Controls ───
     XF86AudioRaiseVolume                allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
@@ -43,6 +47,7 @@ binds {
     // ------- Brightness Controls -------
     XF86MonBrightnessUp                 allow-when-locked=true { spawn "brightnessctl" "set" "+5%"; }
     XF86MonBrightnessDown               allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+
 
     // ─── Window Movement and Focus ───
     MOD+Q                               { close-window; }
@@ -135,7 +140,8 @@ binds {
     MOD+ESCAPE                          allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     // ─── Exit / Power ───
-    CTRL+ALT+DELETE                     { quit; } // Also quits Niri
+ // CTRL+ALT+DELETE                     { quit; } // Also quits Niri
+    CTRL+ALT+DELETE                     { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
     MOD+SHIFT+P                         { power-off-monitors; } // Turn off screens (useful for OLED or privacy)
     MOD+O                               repeat=false { toggle-overview; }
 }
@@ -145,10 +151,10 @@ binds {
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    spawn-sh-at-startup "swww img /home/aryan/Pictures/Wallpapers//home/aryan/Pictures/Wallpapers/mountain_sunset.jpg" // Wallpaper 
-    spawn-sh-at-startup "waybar" // Launch waybar
-    spawn-at-startup "hypridle" 
-
+    spawn-sh-at-startup "swww img /home/$USER/Pictures/Wallpapers//home/aryan/Pictures/Wallpapers/mountain_sunset.jpg" // Wallpaper 
+//  spawn-sh-at-startup "waybar" // Launch waybar
+//  spawn-at-startup "hypridle" 
+    spawn-at-startup "qs" "-c" "noctalia-shell"
     prefer-no-csd // Disable program decorations
     screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
@@ -156,7 +162,7 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 
     layout {
-        gaps 10 // Gap between windows
+        gaps 5 // Gap between windows
         center-focused-column "never" // Don’t auto-center focused column
 
         preset-column-widths {
@@ -239,10 +245,13 @@ binds {
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
-        QT_STYLE_OVERRIDE "kvantum"
-        QT_QPA_PLATFORMTHEME "qt6ct"
+      //  QT_STYLE_OVERRIDE "qt5ct"
+        QT_QPA_PLATFORMTHEME "qt5ct"
     }
 
     hotkey-overlay {
         skip-at-startup
     }
+
+include "./noctalia.kdl"
+
